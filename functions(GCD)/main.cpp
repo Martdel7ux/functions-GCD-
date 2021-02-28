@@ -13,18 +13,18 @@ int gcd(int num1,int num2)
 {
     int gcd=1;
     
-    if ( num2 > num1) {
-            int temp = num2;
-            num2 = num1;
-            num1 = temp;
-        }
-        
-        for (int i = 1; i <=  num2; ++i) {
-            if (num1 % i == 0 && num2 % i ==0) {
-               
-                gcd=i;
-            }
-        }
+   while(num1!=num2)
+   {
+       if(num1>num2)
+       {
+           num1-=num2;
+       }
+       else
+           num2-=num1;
+   }
+    
+    gcd=num1;
+    
     return gcd;
     
 }
